@@ -1,3 +1,9 @@
+:root {
+    --primary-color: #031527;
+    --primary-color-door: #0f2641;
+    --secondary-color-door: #52749b;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -9,12 +15,13 @@ header{
     height: 10%;
     justify-content: space-between;
     align-items: center;
-    background-color: #37495e;
+    background-color: var(--primary-color-door);
 
     *{background-color: inherit}
 
     h1{
         padding: 0 2%;
+        font-size: x-large;
     }
 
     nav > ul{
@@ -49,30 +56,72 @@ main{
     height: 80%;
     display: flex;
     justify-content: center;
-    gap: 2%;
+    gap: 3%;
+}
 
-    .door > img{
-        height: 100%;
-        cursor: pointer;
-        object-fit: cover;
-        display: block;
+.doorway{
+    height: 100%;
+    aspect-ratio: 5/8;
+    border: 2px solid var(--secondary-color-door);
+}
+
+.winning-doorway{
+    background-image: url('../assets/car.png');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: left -10% bottom 10%;
+}
+
+.losing-doorway{
+    background-image: url('../assets/goat.png');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: left 60% bottom 10%;
+}
+
+.door{
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color-door);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    p{
+        background-color: inherit;
+        width: 100%;
+        text-align: center;
+        padding: 15% 0;
+        font-size: x-large;
+        color: var(--secondary-color-door);
+    }
+
+    .knob{
+        width: 15px;
+        aspect-ratio: 1/1;
+        border-radius: 50% / 50%;
+        background-color: var(--secondary-color-door);
+        position: relative;
+        bottom: 50%;
+        margin-left: auto;
+        margin-right: 5%;
     }
 }
 
-.button {
-    display: block;
-    padding: 12px 20px;
-    background: #0078ff;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    margin: 20px auto;
-    width: fit-content;
-}
-
 .stats {
-    background-color: red;
+    button {
+        display: block;
+        padding: 12px 20px;
+        background-color: var(--secondary-color-door);
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        border: none;
+        text-decoration: none;
+        margin: 20px auto;
+        width: fit-content;
+    }
 }
 
 input {
@@ -82,5 +131,6 @@ input {
 
 footer{
     text-align: center;
+    font-size: small;
     padding: 1% 0;
 }

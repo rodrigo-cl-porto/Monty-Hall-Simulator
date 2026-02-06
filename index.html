@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monty Hall - Escolha uma Porta</title>
+    <title>Monty Hall Simulation</title>
     <link rel="stylesheet" href="src/styles/reset.css">
     <link rel="stylesheet" href="src/styles/style.css">
     <link rel="stylesheet" href="src/styles/responsive.css">
@@ -12,41 +12,52 @@
 <body onload="updateStatsPanel()">
 
     <header>
-        <h1>Problema de Monty Hall</h1>
+        <h1>Monty Hall Simulation</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="simulation.html">Simulação</a></li>
-                <li><a href="bayes.html">Explicação</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="simulation.html">Simulation</a></li>
+                <li><a href="bayes.html">Explanation</a></li>
             </ul>
         </nav>
     </header>
 
-    <aside class="stats">
-        <a class="button" onclick="resetStats()">Reset Estatísticas</a>
-    </aside>
-
     <main>
-        <h2>Escolha uma porta</h2>
+        <h2>Choose a door</h2>
         <div class="doors">
-            <figure class="door" onclick="chooseDoor(1)">
-                <img src="src/assets/closed-door1.svg" alt="door1">
-            </figure>
-            <figure class="door" onclick="chooseDoor(2)">
-                <img src="src/assets/closed-door2.svg" alt="door1">
-            </figure>
-            <figure class="door" onclick="chooseDoor(3)">
-                <img src="src/assets/closed-door3.svg" alt="door1">
-            </figure>
+
+            <div id="doorway1" class="doorway">
+                <div id="door1" class="door" onclick="chooseDoor(1)">
+                    <p>1</p>
+                    <div class="knob"></div>
+                </div>
+            </div>
+
+            <div id="doorway2" class="doorway">
+                <div id="door2" class="door" onclick="chooseDoor(2)">
+                    <p>2</p>
+                    <div class="knob"></div>
+                </div>
+            </div>
+
+            <div id="doorway3" class="doorway">
+                <div id="door3" class="door" onclick="chooseDoor(3)">
+                    <p>3</p>
+                    <div class="knob"></div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <aside class="options">
-
+    <aside class="stats">
+        <button type="submit" onclick="resetStats()">Reset Stats</button>
     </aside>
 
+    <aside class="options"></aside>
+
     <footer>
-        Todos os direitos reservados &copy; <script>document.write(new Date().getFullYear())</script>
+        All Rights Reserved &copy; <script>document.write(new Date().getFullYear())</script>
     </footer>
 
 </body>
